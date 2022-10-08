@@ -21,7 +21,7 @@ public class Karyawan {
     public void setGaji_per_hari(int gaji_per_hari) {
         this.gaji_per_hari = gaji_per_hari;
     }
-
+//sdfghjk
 //    public void setTotalGaji(int totalGaji) {
 //        this.totalGaji = totalGaji;
 //    }

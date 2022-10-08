@@ -5,7 +5,7 @@ public class Mahasiswa {
     public String nim, prodi;
     public int total, spp, angkatan, semester, bayar_spp_semester;
     
-    //setter 
+    //sette
     public void setNim(String nim) {
         this.nim = nim;
     }
