@@ -92,7 +92,14 @@ public class MainClass {
                     for(int i = 0; i < la.length; i++){
                         temp += la[i].getHarga();
                     } 
-                    System.out.println("Harga Total : " + temp);
+                    
+                    if(PP.equalsIgnoreCase("y")){
+                        String status = " (PP) ";
+                        System.out.println("Harga Total" + status + ": Rp " + temp*2);
+                    }else{
+                        System.out.println("Harga Total : Rp " + temp);
+                    }
+                    
                     temp = 0;
                 }
                
@@ -101,11 +108,18 @@ public class MainClass {
                     ctl[i] = new Citilink (jumlah, kotaTujuan, noPesawat, noKursi, booking, nik, nama, jenis_kelamin, tglBerangkat, tglKembali, kotaAsal);
                                 ctl [i].getData();
                     }
+                    
                     for(int i = 0; i < ctl.length; i++){
                         temp += ctl[i].getHarga();
                     } 
-                    System.out.println("Harga Total : " + temp);
-                    temp = 0;
+                    
+                    if(PP.equalsIgnoreCase("y")){
+                        String status = " (PP) ";
+                        System.out.println("Harga Total" + status + ": Rp " + temp*2);
+                        
+                    }else{
+                        System.out.println("Harga Total : Rp " + temp);
+                    }
                 }
         }catch (Exception e){
         }
