@@ -61,10 +61,14 @@ public class MainClass {
                     System.out.print("Entry No Kursi : ");
                     noKursi = br.readLine();
                     System.out.println(" ");
+                    
+                    //masukkan object
+                    la[i] = new LionAir (jumlah, kotaTujuan, noPesawat, noKursi, booking, nik, nama, jenis_kelamin, tglBerangkat, tglKembali, kotaAsal);
+                            
                     }
                 }
                     if(pilih == 2){
-                        System.out.println("== SELAMAT DATANG DI LION AIR ==");
+                        System.out.println("== SELAMAT DATANG DI CITILINK ==");
                         System.out.println("Silihkan isi data penumpang ");
                         for(int i = 0 ; i < ctl.length ; i++){
                         System.out.print("Entry Booking ID : ");
@@ -80,46 +84,46 @@ public class MainClass {
                         System.out.print("Entry No Kursi : ");
                         noKursi = br.readLine();
                         System.out.println(" ");
+                        
+                        //masukkan object
+                        ctl[i] = new Citilink (jumlah, kotaTujuan, noPesawat, noKursi, booking, nik, nama, jenis_kelamin, tglBerangkat, tglKembali, kotaAsal);
+                                
                         }
                 }
                     
             //output 
+            
+            //LION AIR
                 if(pilih == 1){
                     for(int i = 0 ; i < la.length ; i++){
-                    la[i] = new LionAir (jumlah, kotaTujuan, noPesawat, noKursi, booking, nik, nama, jenis_kelamin, tglBerangkat, tglKembali, kotaAsal);
-                            la [i].getData();
+                    la [i].getData();
                     }
+                    
+                    //HITUNG TOTAL
                     for(int i = 0; i < la.length; i++){
                         temp += la[i].getHarga();
                     } 
-                    
-                    if(PP.equalsIgnoreCase("y")){
-                        String status = " (PP) ";
-                        System.out.println("Harga Total" + status + ": Rp " + temp*2);
-                    }else{
-                        System.out.println("Harga Total : Rp " + temp);
-                    }
-                    
+                    System.out.println("Harga Total : " + temp);
                     temp = 0;
                 }
                
+                
+                //CITILINK
                 if(pilih == 2){
                     for(int i = 0 ; i < ctl.length ; i++){
-                    ctl[i] = new Citilink (jumlah, kotaTujuan, noPesawat, noKursi, booking, nik, nama, jenis_kelamin, tglBerangkat, tglKembali, kotaAsal);
-                                ctl [i].getData();
+                    ctl [i].getData();
                     }
                     
+                    
+                    
+                    //perhitungan total
                     for(int i = 0; i < ctl.length; i++){
                         temp += ctl[i].getHarga();
                     } 
                     
-                    if(PP.equalsIgnoreCase("y")){
-                        String status = " (PP) ";
-                        System.out.println("Harga Total" + status + ": Rp " + temp*2);
-                        
-                    }else{
-                        System.out.println("Harga Total : Rp " + temp);
-                    }
+                    //harga total
+                    System.out.println("Harga Total : " + temp);
+                    temp = 0;
                 }
         }catch (Exception e){
         }
