@@ -12,6 +12,9 @@ public class MainClass {
         
         try{
             do{
+            tglKembali = "- ";
+            temp = 0;
+            
             System.out.println("=== PESAN TIKET ===");
             //jmlh array ditentukan user 
             //1. entry jumlah 
@@ -106,11 +109,16 @@ public class MainClass {
                     for(int i = 0; i < la.length; i++){
                         temp += la[i].getHarga();
                     } 
+                    //harga total
+                    System.out.println("-----------------------------------");
                     if(PP.equalsIgnoreCase("y")){
-                    System.out.println("Harga Total : " + temp*2);
+                    String status = "(PP)";
+                    System.out.println("Harga Total " + status + " : Rp"+temp*2);
                     }else{
-                    System.out.println("Harga Total : " + temp);
+                    String status = "(Tidak PP)";
+                    System.out.println("Harga Total " + status + " : Rp"+ temp);
                     }
+                    System.out.println("===================================");
                 }
                
                 
@@ -128,11 +136,15 @@ public class MainClass {
                     } 
                     
                     //harga total
+                    System.out.println("-----------------------------------");
                     if(PP.equalsIgnoreCase("y")){
-                    System.out.println("Harga Total : " + temp*2);
+                    String status = "(PP)";
+                    System.out.println("Harga Total " + status + " : Rp"+temp*2);
                     }else{
-                    System.out.println("Harga Total : " + temp);
+                    String status = "(Tidak PP)";
+                    System.out.println("Harga Total " + status + " : Rp"+ temp);
                     }
+                    System.out.println("===================================");
                 }
                 System.out.print("Repurchase ticket? (y/n) : ");
                 option = br.readLine();
