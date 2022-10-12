@@ -6,11 +6,12 @@ public class MainClass {
         BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
         
         //deklarasi var
-        String booking = "", nik = "", nama = "", jenis_kelamin = "", tglBerangkat, tglKembali, kotaAsal;
+        String booking = "", nik = "", nama = "", jenis_kelamin = "", tglBerangkat, tglKembali = "- ", kotaAsal, option = "";
         int jumlahPenumpang, harga = 0, total = 0, temp =0;
         String kotaTujuan = " ", noPesawat = " ", noKursi = "";
         
         try{
+            do{
             System.out.println("=== PESAN TIKET ===");
             //jmlh array ditentukan user 
             //1. entry jumlah 
@@ -33,8 +34,10 @@ public class MainClass {
                 tglBerangkat = br.readLine();
                 System.out.print("Pesan pulang-pergi? (Y/N) : ");
                 String PP = br.readLine();
-                System.out.print("Entry Tanggal Kembali : ");
-                tglKembali = br.readLine();
+                if(PP.equalsIgnoreCase("y")){
+                    System.out.print("Entry Tanggal Kembali : ");
+                    tglKembali = br.readLine();
+                }
                 
                 System.out.print("\n ");
                 System.out.println("== Pilih Maskapai ==");
@@ -103,8 +106,11 @@ public class MainClass {
                     for(int i = 0; i < la.length; i++){
                         temp += la[i].getHarga();
                     } 
+                    if(PP.equalsIgnoreCase("y")){
+                    System.out.println("Harga Total : " + temp*2);
+                    }else{
                     System.out.println("Harga Total : " + temp);
-                    temp = 0;
+                    }
                 }
                
                 
@@ -122,9 +128,15 @@ public class MainClass {
                     } 
                     
                     //harga total
+                    if(PP.equalsIgnoreCase("y")){
+                    System.out.println("Harga Total : " + temp*2);
+                    }else{
                     System.out.println("Harga Total : " + temp);
-                    temp = 0;
+                    }
                 }
+                System.out.print("Repurchase ticket? (y/n) : ");
+                option = br.readLine();
+            }while(option.equalsIgnoreCase("y"));
         }catch (Exception e){
         }
     }
