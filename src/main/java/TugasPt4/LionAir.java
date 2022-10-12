@@ -39,8 +39,11 @@ public class LionAir extends Tiket {
             this.harga = 800000;
             }
         }
+        //kota
         this.kotaTujuan = kotaTujuan;
+        //no peswat
         this.noPesawat = noPesawat;
+        //no kursi
         this.noKursi = noKursi;
     }
 
